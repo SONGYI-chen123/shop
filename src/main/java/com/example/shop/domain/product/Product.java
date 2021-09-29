@@ -18,7 +18,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder
 public class Product {
-  private String id = UUID.randomUUID().toString();
+  private String id;
 
   private String name;
 
