@@ -2,22 +2,21 @@ package com.example.shop.common.exception;
 
 public interface ILangMessage {
 
-    String getZhMsg();
+  String getZhMsg();
 
-    String getEnMsg();
+  String getEnMsg();
 
-    default Object[] getParams() {
-        return new Object[0];
-    }
+  default Object[] getParams() {
+    return new Object[0];
+  }
 
-    default void setParams(Object... params) {
+  default void setParams(Object... params) {
 
-    }
+  }
 
-    default String getLangMessage() {
-        return MultiLanguageMessage.builder()
-                .zhMsg(String.format(getZhMsg(), getParams()))
-                .enMsg(String.format(getEnMsg(), getParams())).build().getMessage();
-    }
+  default String getLangMessage() {
+    return MultiLanguageMessage.builder().zhMsg(String.format(getZhMsg(), getParams()))
+        .enMsg(String.format(getEnMsg(), getParams())).build().getMessage();
+  }
 
 }

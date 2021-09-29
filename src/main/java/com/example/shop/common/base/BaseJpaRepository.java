@@ -6,5 +6,5 @@ import org.springframework.data.repository.NoRepositoryBean;
 
 @NoRepositoryBean
 public interface BaseJpaRepository<T, D> extends JpaRepository<T, D> {
-    JPAQueryFactory getJpaQueryFactory();
+  JPAQueryFactory getJpaQueryFactory();
 }

@@ -14,18 +14,18 @@ import java.util.Locale;
 @AllArgsConstructor
 public class MultiLanguageMessage {
 
-    private String zhMsg;
+  private String zhMsg;
 
-    private String enMsg;
+  private String enMsg;
 
-    public String getMessage() {
-        Locale locale = LocaleContextHolder.getLocale();
-        String language = locale.getLanguage();
-        if (Locale.SIMPLIFIED_CHINESE.getLanguage().equals(language)) {
-            return zhMsg;
-        }
-        return enMsg;
-
+  public String getMessage() {
+    Locale locale = LocaleContextHolder.getLocale();
+    String language = locale.getLanguage();
+    if (Locale.SIMPLIFIED_CHINESE.getLanguage().equals(language)) {
+      return zhMsg;
     }
+    return enMsg;
+
+  }
 
 }

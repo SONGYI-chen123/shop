@@ -5,6 +5,7 @@ plugins {
     id 'java'
     id "idea"
     id "org.flywaydb.flyway" version "7.3.0"
+    id "com.diffplug.gradle.spotless" version "4.5.1"
 }
 
 group = 'com.example'
@@ -18,6 +19,7 @@ repositories {
 apply from: "${rootProject.projectDir}/gradle/integration-test.gradle"
 apply from: "${rootProject.projectDir}/gradle/idea.gradle"
 apply from: "${rootProject.projectDir}/gradle/docker-compose.gradle"
+apply from: "${rootProject.projectDir}/gradle/spotless.gradle"
 
 dependencies {
     compileOnly('org.projectlombok:lombok:1.18.16')
@@ -44,6 +46,7 @@ dependencies {
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.8")
     implementation('com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.3')
     implementation("com.querydsl:querydsl-jpa:4.3.1")
+    implementation("com.diffplug.spotless:spotless-plugin-gradle:3.23.1")
 
     runtimeOnly('mysql:mysql-connector-java')
 
