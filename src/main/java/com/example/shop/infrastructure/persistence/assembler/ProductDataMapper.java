@@ -1,6 +1,6 @@
 package com.example.shop.infrastructure.persistence.assembler;
 
-import com.example.shop.domain.product.Product;
+import com.example.shop.domain.product.entity.Product;
 import com.example.shop.infrastructure.persistence.entity.ProductPo;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;

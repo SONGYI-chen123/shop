@@ -1,4 +1,4 @@
-package com.example.shop.domain.product;
+package com.example.shop.domain.product.entity;
 
 import com.example.shop.common.entity.ProductCategory;
 import lombok.AllArgsConstructor;
