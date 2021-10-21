@@ -41,7 +41,7 @@ public class ProductPo {
 
   private Integer stockNumber;
 
-  private LocalDateTime createDate;
+  private LocalDateTime createTime = LocalDateTime.now();
 
-  private LocalDateTime updateDate;
+  private LocalDateTime updateTime = LocalDateTime.now();
 }

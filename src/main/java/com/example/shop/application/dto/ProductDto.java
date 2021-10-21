@@ -1,4 +1,4 @@
-package com.example.shop.domain.product.entity;
+package com.example.shop.application.dto;
 
 import com.example.shop.common.entity.ProductCategory;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Product {
+public class ProductDto {
   private String id;
 
   private String name;

@@ -1,4 +1,4 @@
-package com.example.shop.domain.product.entity;
+package com.example.shop.presentation.vo.command;
 
 import com.example.shop.common.entity.ProductCategory;
 import lombok.AllArgsConstructor;
@@ -14,9 +14,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Product {
-  private String id;
-
+public class AddProductCommand {
   private String name;
 
   private ProductCategory category;
