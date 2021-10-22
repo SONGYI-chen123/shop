@@ -1,43 +1,20 @@
 package com.example.shop;
 
-import io.restassured.config.EncoderConfig;
-import io.restassured.config.LogConfig;
-import io.restassured.module.mockmvc.RestAssuredMockMvc;
-import io.restassured.module.mockmvc.config.RestAssuredMockMvcConfig;
-import io.restassured.module.mockmvc.specification.MockMvcRequestSpecification;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.TestMethodOrder;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import io.restassured.RestAssured;
+import org.junit.Before;
+import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.web.context.WebApplicationContext;
+import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.test.context.junit4.SpringRunner;
 
-@SpringBootTest
-@AutoConfigureMockMvc
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public abstract class BaseIntegrationTest {
-  @Autowired
-  protected WebApplicationContext context;
+  @LocalServerPort
+  int port;
 
-  @BeforeEach
-  public void init() {
-    RestAssuredMockMvc.webAppContextSetup(context);
-  }
-
-
-  @AfterEach
-  public void reset() {
-    RestAssuredMockMvc.reset();
-  }
-
-
-  protected MockMvcRequestSpecification given() {
-    return RestAssuredMockMvc.given()
-        .config(RestAssuredMockMvcConfig.config().encoderConfig(
-            new EncoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false)))
-        .config(RestAssuredMockMvcConfig.config()
-            .logConfig(LogConfig.logConfig().enableLoggingOfRequestAndResponseIfValidationFails()));
+  @Before
+  public void setUp() {
+    RestAssured.port = port;
   }
 }
