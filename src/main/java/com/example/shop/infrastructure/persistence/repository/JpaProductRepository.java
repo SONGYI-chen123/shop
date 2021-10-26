@@ -21,6 +21,12 @@ public interface JpaProductRepository
     return findAll().stream().map(mapper::toDo).collect(Collectors.toList());
   }
 
+  default void deleteAllProducts() {
+    this.deleteAll();
+  }
+
   List<ProductPo> findAll();
+
+  void deleteAll();
 
 }
