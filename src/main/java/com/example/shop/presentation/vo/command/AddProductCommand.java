@@ -17,6 +17,8 @@ import java.math.BigDecimal;
 public class AddProductCommand {
   private String name;
 
+  private String productNo;
+
   private ProductCategory category;
 
   private BigDecimal purchasePrice;

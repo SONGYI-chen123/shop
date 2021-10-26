@@ -1,0 +1,1 @@
+Alter TABLE `product` add column `product_no` VARCHAR(32)  NOT NULL COMMENT '商品编号';

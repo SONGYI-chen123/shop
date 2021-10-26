@@ -12,7 +12,7 @@ public class ProductApplicationServiceIntegrationTest extends BaseIntegrationTes
 
   @Test
   public void should_add_product_success() {
-    AddProductCommand command = AddProductCommand.builder().name("apple")
+    AddProductCommand command = AddProductCommand.builder().name("apple").productNo("NO.11")
         .category(ProductCategory.VEGETABLES).purchasePrice(BigDecimal.valueOf(13))
         .retailPrice(BigDecimal.valueOf(15)).stockNumber(100).build();
 

@@ -2,7 +2,6 @@ package com.example.shop.infrastructure.persistence.entity;
 
 import com.example.shop.common.entity.ProductCategory;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,7 +18,6 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -31,6 +29,8 @@ public class ProductPo {
   private String id;
 
   private String name;
+
+  private String productNo;
 
   @Enumerated(EnumType.STRING)
   private ProductCategory category;
