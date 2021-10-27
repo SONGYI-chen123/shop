@@ -6,6 +6,7 @@ import com.example.shop.domain.product.repository.ProductRepository;
 import com.example.shop.infrastructure.persistence.entity.ProductPo;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static com.example.shop.infrastructure.persistence.assembler.ProductDataMapper.mapper;
@@ -18,15 +19,20 @@ public interface JpaProductRepository
 
   @Override
   default List<Product> findAllProducts() {
-    return findAll().stream().map(mapper::toDo).collect(Collectors.toList());
+    return this.findAll().stream().map(mapper::toDo).collect(Collectors.toList());
   }
 
   default void deleteAllProducts() {
     this.deleteAll();
   }
 
+  default Optional<Product> findProductByProductNo(String productNo) {
+    return this.findByProductNo(productNo).map(mapper::toDo);
+  }
+
   List<ProductPo> findAll();
 
   void deleteAll();
 
+  Optional<ProductPo> findByProductNo(String productNo);
 }

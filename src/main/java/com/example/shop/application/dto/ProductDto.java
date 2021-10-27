@@ -27,5 +27,5 @@ public class ProductDto {
 
   private BigDecimal retailPrice;
 
-  private Integer stockNumber;
+  private Integer purchaseNumber;
 }

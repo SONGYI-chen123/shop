@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -28,4 +29,19 @@ public class Product {
   private BigDecimal retailPrice;
 
   private Integer stockNumber;
+
+  private Integer purchaseNumber;
+
+  public Product buildNewProduct(Product originalProduct) {
+    if (Objects.isNull(originalProduct)) {
+      return Product.builder().id(id).name(name).productNo(productNo).category(category)
+          .purchasePrice(purchasePrice).retailPrice(retailPrice).stockNumber(purchaseNumber)
+          .build();
+    } else {
+      return Product.builder().id(originalProduct.id).name(originalProduct.name)
+          .productNo(originalProduct.productNo).category(originalProduct.category)
+          .purchasePrice(originalProduct.purchasePrice).retailPrice(originalProduct.retailPrice)
+          .stockNumber(purchaseNumber + originalProduct.getStockNumber()).build();
+    }
+  }
 }
