@@ -24,9 +24,9 @@ pipeline {
                 }
             }
         }
-        stage('Publish') {
+        stage('deploy') {
             steps {
-                sh './gradlew publish --no-daemon'
+                echo 'deploy'
             }
         }
     }
