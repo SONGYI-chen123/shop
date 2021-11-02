@@ -1,9 +1,8 @@
 package com.example.shop.common.exception;
 
 public enum ExceptionCode implements IExceptionCode {
-  NOT_FOUND("资源未找到", "not found");
+  NOT_FOUND("not found");
 
-  String zhMsg;
 
   String enMsg;
 
@@ -11,8 +10,7 @@ public enum ExceptionCode implements IExceptionCode {
 
   }
 
-  ExceptionCode(String zhMsg, String enMsg) {
-    this.zhMsg = zhMsg;
+  ExceptionCode(String enMsg) {
     this.enMsg = enMsg;
   }
 
@@ -21,10 +19,6 @@ public enum ExceptionCode implements IExceptionCode {
     return this.name();
   }
 
-  @Override
-  public String getZhMsg() {
-    return zhMsg;
-  }
 
   @Override
   public String getEnMsg() {
