@@ -1,14 +1,15 @@
 package com.example.shop.domain.product.repository;
 
 import com.example.shop.domain.product.entity.Product;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface ProductRepository {
   void saveProduct(Product product);
 
-  List<Product> findAllProducts();
+  Page<Product> findAllProducts(Pageable pageable);
 
   void deleteAllProducts();
 

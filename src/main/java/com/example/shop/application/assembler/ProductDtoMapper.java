@@ -12,4 +12,6 @@ public interface ProductDtoMapper {
   ProductDtoMapper MAPPER = getMapper(ProductDtoMapper.class);
 
   Product toDo(ProductDto productDto);
+
+  ProductDto toDto(Product product);
 }

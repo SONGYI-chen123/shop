@@ -1,4 +1,4 @@
-package com.example.shop.application.dto;
+package com.example.shop.presentation.vo.command;
 
 import com.example.shop.common.entity.ProductCategory;
 import lombok.AllArgsConstructor;
@@ -14,9 +14,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ProductDto {
-  private String id;
-
+public class ProductResponse {
   private String name;
 
   private String productNo;
@@ -26,8 +24,6 @@ public class ProductDto {
   private BigDecimal purchasePrice;
 
   private BigDecimal retailPrice;
-
-  private Integer purchaseNumber;
 
   private Integer stockNumber;
 }

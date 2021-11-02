@@ -4,6 +4,8 @@ import com.example.shop.domain.product.entity.Product;
 import com.example.shop.domain.product.entity.ProductStockRecord;
 import com.example.shop.domain.product.repository.ProductRepository;
 import com.example.shop.domain.product.repository.ProductStockRecordRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 
@@ -26,5 +28,9 @@ public class ProductService {
 
     productRepository.saveProduct(newProduct);
     productStockRecordRepository.saveProductStockRecord(productStockRecord);
+  }
+
+  public Page<Product> getProducts(Pageable pageable) {
+    return productRepository.findAllProducts(pageable);
   }
 }

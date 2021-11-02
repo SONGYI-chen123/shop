@@ -2,6 +2,8 @@ package com.example.shop.application.service;
 
 import com.example.shop.application.dto.ProductDto;
 import com.example.shop.domain.product.service.ProductService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 
@@ -18,5 +20,9 @@ public class ProductApplicationService {
 
   public void addProduct(ProductDto productDto) {
     productService.addProduct(MAPPER.toDo(productDto));
+  }
+
+  public Page<ProductDto> getProducts(Pageable pageable) {
+    return productService.getProducts(pageable).map(MAPPER::toDto);
   }
 }
