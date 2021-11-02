@@ -22,4 +22,9 @@ public class ProductStockRecord {
   private Integer increaseNumber;
 
   private Integer totalNumber;
+
+  public static ProductStockRecord buildAddProductRecord(Product product) {
+    return ProductStockRecord.builder().productNo(product.getProductNo())
+        .increaseNumber(product.getPurchaseNumber()).totalNumber(product.getStockNumber()).build();
+  }
 }
